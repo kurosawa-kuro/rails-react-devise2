@@ -1,17 +1,8 @@
+# rails-react-devise2/backend/spec/requests/auth/sessions_spec.rb
 require 'rails_helper'
 
 RSpec.describe "Auth", type: :request do
   let(:user_attributes) { attributes_for(:user) }
-
-  # Helper method for authentication headers
-  def authentication_headers_for(user)
-    post user_session_path, params: { email: user.email, password: user.password }
-    {
-      'uid' => response.headers['uid'],
-      'client' => response.headers['client'],
-      'access-token' => response.headers['access-token']
-    }
-  end
 
   describe "POST /auth" do
     let(:registration_params) do
