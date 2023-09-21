@@ -1,0 +1,17 @@
+@baseURL = http://localhost:3000
+
+###
+
+# すべてのTodoを取得
+GET {{baseURL}}/todos
+
+###
+
+# 新しいTodoを追加
+POST {{baseURL}}/todos
+Content-Type: application/json
+
+{
+  "title": "新しいタスク"
+}
+
